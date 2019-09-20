@@ -6,25 +6,33 @@ namespace Vektorer
     {
         static void Main(string[] args)
         {
-           string[] namn = new string[5];
+            string[] namn = new string[5];
 
-           string userInput;
+            string userInput;
 
-           Console.WriteLine("Skriv i fem namn");
+            Console.WriteLine("Skriv i fem namn");
 
-           for (int i = 0; i < namn.Length; i++)
-           {
-               Console.Write("Namn " + (i + 1) + ": ");
-               userInput = Console.ReadLine();
+            try
+            {
+                for (int i = 0; i < namn.Length; i++)
+                {
+                    Console.Write("Namn " + (i + 1) + ": ");
+                    userInput = Console.ReadLine();
 
-               namn[i] = userInput;
-           }
+                    namn[i] = userInput;
+                }
 
-            Console.WriteLine("\n\nDina namn var:");
-           for (int i = 0; i < namn.Length; i++)
-           {
-               Console.WriteLine(namn[i]);
-           }
+                Console.WriteLine("\n\nDina namn var:");
+                for (int i = 0; i < namn.Length; i++)
+                {
+                    Console.WriteLine(namn[i]);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Något gick fel :(");
+                Console.WriteLine(e);
+            }
         }
     }
 }
