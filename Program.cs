@@ -6,29 +6,25 @@ namespace Vektorer
     {
         static void Main(string[] args)
         {
-            int[] tal = new int[5];
+           string[] namn = new string[5];
 
-            Console.WriteLine("Skriv in fem heltal");
+           string userInput;
 
-            for (int i = 0; i < tal.Length; i++)
-            {
-                Console.Write("Skriv ett tal: ");
-                tal[i] = Convert.ToInt32(Console.ReadLine());
+           Console.WriteLine("Skriv i fem namn");
 
-            }
+           for (int i = 0; i < namn.Length; i++)
+           {
+               Console.Write("Namn " + (i + 1) + ": ");
+               userInput = Console.ReadLine();
 
-            int samman = 0;
+               namn[i] = userInput;
+           }
 
-            for (int i = 0; i < tal.Length; i++)
-            {
-                Console.WriteLine(tal[i]);
-
-                samman += tal[i];
-
-            }
-            
-            Console.WriteLine(samman);
-
+            Console.WriteLine("\n\nDina namn var:");
+           for (int i = 0; i < namn.Length; i++)
+           {
+               Console.WriteLine(namn[i]);
+           }
         }
     }
 }
