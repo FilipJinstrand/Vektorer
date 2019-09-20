@@ -28,7 +28,7 @@ namespace Vektorer
                     Console.WriteLine("\n\nDina namn var:");
                     for (int i = 0; i < namn.Length; i++)
                     {
-                        Console.WriteLine(namn[i]);
+                        Console.Write("Dina namn var " + (i + 1) + ": ");
                     }
 
                     Console.WriteLine("Nu får du byta namn!");
