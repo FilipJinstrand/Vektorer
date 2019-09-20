@@ -7,8 +7,9 @@ namespace Vektorer
         static void Main(string[] args)
         {
             string[] namn = new string[5];
-
             string userInput;
+
+            bool game = true;
 
             Console.WriteLine("Skriv i fem namn");
 
@@ -21,11 +22,33 @@ namespace Vektorer
 
                     namn[i] = userInput;
                 }
-
-                Console.WriteLine("\n\nDina namn var:");
-                for (int i = 0; i < namn.Length; i++)
+                while (game)
                 {
-                    Console.WriteLine(namn[i]);
+
+                    Console.WriteLine("\n\nDina namn var:");
+                    for (int i = 0; i < namn.Length; i++)
+                    {
+                        Console.WriteLine(namn[i]);
+                    }
+
+                    Console.WriteLine("Nu får du byta namn!");
+                    Console.WriteLine("Eller avsluta programet med q|Q");
+                    Console.WriteLine("Välj platsen du vill ändra (1-5)");
+                    string answer = Console.ReadLine();
+                    answer = answer.ToUpper();
+
+                    if (answer == "Q")
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        int number = Convert.ToInt32(answer);
+                        number--;
+                        Console.WriteLine("Skriv nu namnet");
+                        string nyttNamn = Console.ReadLine();
+                        namn[number] = nyttNamn;
+                    }
                 }
             }
             catch (Exception e)
@@ -33,6 +56,7 @@ namespace Vektorer
                 Console.WriteLine("Något gick fel :(");
                 Console.WriteLine(e);
             }
+
         }
     }
 }
